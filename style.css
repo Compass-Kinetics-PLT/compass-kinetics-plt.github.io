@@ -45,4 +45,16 @@ img.trainer-photo {
   color: #005a5a;
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
 
