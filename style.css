@@ -130,5 +130,10 @@ body.fade-in {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
-
+.scroll-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #ccc, #005a5a, #ccc);
+  margin: 3em 0;
+}
 
