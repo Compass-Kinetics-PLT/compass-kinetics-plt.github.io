@@ -124,5 +124,11 @@ body.fade-in {
   color: #007777;
   transform: translateX(4px);
 }
+.caption {
+  font-style: italic;
+  color: #666;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
 
 
