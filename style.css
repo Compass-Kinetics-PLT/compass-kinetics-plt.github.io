@@ -158,4 +158,11 @@ body.fade-in {
     height: 100px;
   }
 }
+/* Make banner smaller on phones */
+@media (max-width: 600px) {
+  .site-banner img {
+    max-height: 90px;   /* reduce vertical size */
+  }
+}
+
 
