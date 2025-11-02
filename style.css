@@ -147,10 +147,13 @@ body.fade-in {
 
 /* 🔹 Banner image */
 .site-banner img {
-  width: 100%;          /* always span full width */
-  height: 180px;        /* default height */
-  object-fit: cover;    /* crop gracefully if needed */
   display: block;
+  max-width: 100%;   /* never exceed the page width */
+  width: auto;       /* scale naturally */
+  height: auto;      /* keep aspect ratio */
+  margin: 0 auto;    /* center the image */
+  max-height: 180px; /* optional: control vertical size */
+  object-fit: contain; /* ensures full image fits without cropping */
 }
 
 /* 🔹 Banner text */
