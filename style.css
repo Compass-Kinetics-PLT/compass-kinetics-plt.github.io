@@ -187,3 +187,10 @@ body.fade-in {
     height: 150px;      /* medium height for tablets */
   }
 }
+.site-banner img {
+  max-width: 100%;
+  width: auto;       /* override width:100% */
+}
+
+
+
