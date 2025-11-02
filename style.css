@@ -148,20 +148,21 @@ body.fade-in {
 
 .site-banner img {
   display: block;
-  width: 100%;   /* never exceed page width */
-  height: 140px;      /* keep aspect ratio */
+  max-width: 100%;   /* never exceed page width */
+  height: auto;      /* keep aspect ratio */
   margin: 0 auto;    /* center horizontally */
-  object-fit: cover; /* crop top/bottom elegantly */
+  max-height: 150px;
+  object-fit: contain; 
 }
 @media (max-width: 600px) {
   .site-banner img {
-    height: 100px;
+    height: 80px;
   }
 }
 /* Make banner smaller on phones */
 @media (max-width: 600px) {
   .site-banner img {
-    max-height: 90px;   /* reduce vertical size */
+    max-height: 80px;   /* reduce vertical size */
   }
 }
 
