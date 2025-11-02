@@ -149,9 +149,8 @@ body.fade-in {
 .site-banner img {
   display: block;
   width: 100%;   /* never exceed page width */
-  height: auto;      /* keep aspect ratio */
+  height: 140px;      /* keep aspect ratio */
   margin: 0 auto;    /* center horizontally */
-  max-height: 150px; /* adjust this number to taste */
   object-fit: cover; /* crop top/bottom elegantly */
 }
 @media (max-width: 600px) {
