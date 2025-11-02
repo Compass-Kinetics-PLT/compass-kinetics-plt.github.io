@@ -155,5 +155,11 @@ body.fade-in {
   max-width: 100%;
   height: auto;
 }
+.site-banner img {
+  width: 100%;       /* fills the container width */
+  height: auto;      /* keeps aspect ratio */
+  max-height: 200px; /* optional: limit vertical size */
+  object-fit: cover; /* crops gracefully if the image is tall */
+}
 
 
