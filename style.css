@@ -161,5 +161,25 @@ body.fade-in {
   max-height: 200px; /* optional: limit vertical size */
   object-fit: cover; /* crops gracefully if the image is tall */
 }
+/* For small screens (phones) */
+@media (max-width: 600px) {
+  .site-banner img {
+    max-height: 120px; /* shorter banner on mobile */
+  }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .site-banner img {
+    max-height: 160px;
+  }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1025px) {
+  .site-banner img {
+    max-height: 220px;
+  }
+}
 
 
