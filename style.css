@@ -170,6 +170,7 @@ body.fade-in {
   max-width: 100%; /* cap the height */
   height: auto
   overflow: hidden;
+  margin-bottom: 2em; /* pushes body text down */
 }
 /* Tablet */
 @media (max-width: 1024px) {
