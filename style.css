@@ -186,4 +186,18 @@ body.fade-in {
     margin-bottom: l.5em  /* add spacing below banner */
   }
 }
+/* Tablet */
+@media (max-width: 1024px) {
+  .courses-banner {
+    height: auto;  /* let it expand naturally */
+    margin-bottom: 1.5em
+  }
+}
+/* Mobile */
+@media (max-width: 480px) {
+  .courses-banner {
+    height: auto;  /* shrunk but don't crop */
+    margin-bottom: l.5em  /* add spacing below banner */
+  }
+}
 
