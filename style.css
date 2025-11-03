@@ -151,13 +151,13 @@ body.fade-in {
   object-fit: cover;      /* ensures it fills nicely without distortion */
 }
 /* Tablet */
-@media (max-width: 480px) {
+@media (max-width: 300px) {
   .site-banner {
     height: 50px;
   }
 }
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 300px) {
   .site-banner {
     height: 50px;
   }
