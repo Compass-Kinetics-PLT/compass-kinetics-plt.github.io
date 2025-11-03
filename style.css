@@ -138,10 +138,10 @@ body.fade-in {
 }
 /* Banner container */
 .site-banner {
-  /*display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center;*/
-  height: 100px;      /* desktop default */
+  align-items: center;
+  height: 50px;      /* desktop default */
   overflow: hidden;       /* crops if image is taller than max-height */
   }
 /* Banner image */
