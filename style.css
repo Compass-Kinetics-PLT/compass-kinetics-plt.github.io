@@ -138,24 +138,30 @@ body.fade-in {
 }
 /* Banner styling */
 .site-banner {
-  height: 150px;       /* adjust to your preferred desktop size */
+  max-height: 150px;       /* adjust to your preferred desktop size */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* crop if image is taller */
+}
+
+.site-banner img {
+  max-width: 100%;   /* prevents overflow */
+  height: auto;      /* keeps proportions */
 }
 
 /* Tablet and smaller screens */
 @media (max-width: 1024px) {
   .site-banner {
-    height: 180px;     /* smaller height for tablets */
+    max-height: 150px;     /* smaller height for tablets */
   }
 }
 /* Mobile phones */
 @media (max-width: 600px) {
   .site-banner {
-    height: 120px;     /* even smaller for phones */
+    max-height: 150px;     /* even smaller for phones */
   }
 }
 
