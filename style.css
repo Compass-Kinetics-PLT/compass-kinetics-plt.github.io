@@ -138,7 +138,7 @@ body.fade-in {
 }
 /* Banner styling */
 .site-banner {
-  height: 250px;       /* adjust to your preferred desktop size */
+  height: 150px;       /* adjust to your preferred desktop size */
   background-size: cover;
   background-position: center;
   display: flex;
