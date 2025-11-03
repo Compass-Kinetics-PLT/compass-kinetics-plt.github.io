@@ -174,13 +174,13 @@ body.fade-in {
 /* Tablet */
 @media (max-width: 1024px) {
   .site-banner {
-    height: auto;  /* let it expand naturally */
+    height: 80px;  /* let it expand naturally */
   }
 }
 /* Mobile */
 @media (max-width: 480px) {
   .site-banner {
-    max-height: 80px;  /* shrunk but don't crop */
+    height: 80px;  /* shrunk but don't crop */
     width: auto;
     margin-bottom: lem  /* add spacing below banner */
   }
