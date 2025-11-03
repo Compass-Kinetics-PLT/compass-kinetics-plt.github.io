@@ -150,6 +150,24 @@ body.fade-in {
   height: 100%;           /* keeps proportions */
   object-fit: cover;      /* ensures it fills nicely without distortion */
 }
+/* Shared base style */
+.site-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Home page banner */
+.home-banner {
+  height: 180px;   /* taller */
+  overflow: hidden;
+}
+
+/* Courses page banner */
+.courses-banner {
+  height: 120px;   /* shorter */
+  overflow: hidden;
+}
 /* Tablet */
 @media (max-width: 150px) {
   .site-banner {
