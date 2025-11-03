@@ -180,7 +180,8 @@ body.fade-in {
 /* Mobile */
 @media (max-width: 480px) {
   .site-banner {
-    height: auto;  /* no fixed height */
+    max-height: 120px;  /* shrunk but don't crop */
+    width: auto;
     margin-bottom: lem  /* add spacing below banner */
   }
 }
