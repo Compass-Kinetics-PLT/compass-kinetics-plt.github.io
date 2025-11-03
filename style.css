@@ -153,8 +153,8 @@ body.fade-in {
 /* Shared base style */
 .site-banner img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* scale proportionally */
+  object-fit: contain;
 }
 
 /* Home page banner */
