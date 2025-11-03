@@ -146,8 +146,8 @@ body.fade-in {
   }
 /* Banner image */
 .site-banner img {
-  width: 100%;        /* prevents overflow horizontally */
-  height: 100%;           /* keeps proportions */
+  width: 50%;        /* prevents overflow horizontally */
+  height: 50%;           /* keeps proportions */
   object-fit: cover;      /* ensures it fills nicely without distortion */
 }
 /* Tablet */
