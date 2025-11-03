@@ -155,7 +155,7 @@ body.fade-in {
   height: auto;            /* keep proportions */
   object-fit: contain;     /* always show full image, no crop/zoom */
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Tablet adjustments */
