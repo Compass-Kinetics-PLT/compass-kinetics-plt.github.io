@@ -137,7 +137,7 @@ body.fade-in {
   margin: 3em 0;
 }
 /* Banner styling */
-.site-banner img {
+.site-banner {
   height: 250px;       /* adjust to your preferred desktop size */
   background-size: cover;
   background-position: center;
@@ -148,13 +148,13 @@ body.fade-in {
 
 /* Tablet and smaller screens */
 @media (max-width: 1024px) {
-  .site-banner img {
+  .site-banner {
     height: 180px;     /* smaller height for tablets */
   }
 }
 /* Mobile phones */
 @media (max-width: 600px) {
-  .site-banner img {
+  .site-banner {
     height: 120px;     /* even smaller for phones */
   }
 }
