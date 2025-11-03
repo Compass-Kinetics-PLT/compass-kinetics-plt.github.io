@@ -165,7 +165,8 @@ body.fade-in {
 
 /* Courses page banner */
 .courses-banner {
-  height: 120px;   /* shorter */
+  /*height: 120px;   /* shorter */
+  max-height: 150px; /* cap the height */
   overflow: hidden;
 }
 /* Tablet */
