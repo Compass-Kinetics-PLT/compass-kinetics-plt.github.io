@@ -147,8 +147,8 @@ body.fade-in {
 /* Banner image */
 .site-banner img {
   width: 100%;        /* prevents overflow horizontally */
-  height: 100%;           /* keeps proportions */
-  object-fit: cover;      /* ensures it fills nicely without distortion */
+  height: auto;           /* keeps proportions */
+  object-fit: contain;      /* ensures it fills nicely without distortion */
 }
 /* Shared base style */
 .site-banner img {
