@@ -136,68 +136,43 @@ body.fade-in {
   background: linear-gradient(to right, #ccc, #005a5a, #ccc);
   margin: 3em 0;
 }
+/* =========================
+   Banner Styling (Unified)
+   ========================= */
+
 /* Banner container */
 .site-banner {
-  /*display: flex;
-  justify-content: center;
-  align-items: center; */
-  height: 200px;      /* cap the height, but don't force it */
-  overflow: visible;       /* let the image show fully */
-  text-align: center; /* optional: center the image */
-  }
+  width: 100%;
+  text-align: center;
+  overflow: visible;       /* never crop */
+  margin-bottom: 2em;      /* space below banner so text doesn't overlap */
+}
+
 /* Banner image */
 .site-banner img {
-  max-width: 100%;        /* prevents overflow horizontally */
-  height: auto;           /* keeps proportions */
-  object-fit: contain;      /* ensures it fills nicely without distortion */
-}
-/* Shared base style */
-.site-banner img {
-  max-width: 100%;
-  height: auto; /* scale proportionally */
-  object-fit: contain;
+  max-width: 100%;         /* responsive width */
+  height: auto;            /* keep proportions */
+  object-fit: contain;     /* always show full image, no crop/zoom */
+  display: block;
+  margin: 0 auto;
 }
 
-/* Home page banner */
-.home-banner {
-  height: 180px;   /* taller */
-  overflow: hidden;
-}
-
-/* Courses page banner */
-.courses-banner {
-  /*height: 120px;   /* shorter */
-  max-width: 100%; /* cap the height */
-  height: auto
-  overflow: hidden;
-  margin-bottom: 2em; /* pushes body text down */
-}
-/* Tablet */
+/* Tablet adjustments */
 @media (max-width: 1024px) {
   .site-banner {
-    height: auto;  /* let it expand naturally */
-    margin-bottom: 1.5em
+    margin-bottom: 1.5em;  /* slightly less spacing */
   }
-}
-/* Mobile */
-@media (max-width: 480px) {
-  .site-banner {
-    height: auto;  /* shrunk but don't crop */
-    margin-bottom: l.5em  /* add spacing below banner */
-  }
-}
-/* Tablet */
-@media (max-width: 1024px) {
-  .courses-banner {
-    height: auto;  /* let it expand naturally */
-    margin-bottom: 1.5em
-  }
-}
-/* Mobile */
-@media (max-width: 480px) {
-  .courses-banner {
-    height: auto;  /* shrunk but don't crop */
-    margin-bottom: l.5em  /* add spacing below banner */
+  .site-banner img {
+    max-height: 200px;     /* optional: cap banner height */
   }
 }
 
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .site-banner {
+    margin-bottom: 1.5em;
+  }
+  .site-banner img {
+    max-height: 150px;     /* keep banner slim on phones */
+  }
+}
