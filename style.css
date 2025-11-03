@@ -141,18 +141,19 @@ body.fade-in {
   /*display: flex;
   justify-content: center;
   align-items: center; */
-  height: 150px;      /* desktop default */
-  overflow: hidden;       /* crops if image is taller than max-height */
+  height: 200px;      /* cap the height, but don't force it */
+  overflow: visible;       /* let the image show fully */
+  text-align: center; /* optional: center the image */
   }
 /* Banner image */
 .site-banner img {
-  width: 100%;        /* prevents overflow horizontally */
+  max-width: 100%;        /* prevents overflow horizontally */
   height: auto;           /* keeps proportions */
   object-fit: contain;      /* ensures it fills nicely without distortion */
 }
 /* Shared base style */
 .site-banner img {
-  width: 100%;
+  max-width: 100%;
   height: auto; /* scale proportionally */
   object-fit: contain;
 }
@@ -170,13 +171,13 @@ body.fade-in {
   overflow: hidden;
 }
 /* Tablet */
-@media (max-width: 150px) {
+@media (max-width: 1024px) {
   .site-banner {
     height: 30px;
   }
 }
 /* Mobile */
-@media (max-width: 150px) {
+@media (max-width: 480px) {
   .site-banner {
     height: 30px;
   }
