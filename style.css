@@ -170,20 +170,20 @@ body.fade-in {
   max-width: 100%; /* cap the height */
   height: auto
   overflow: hidden;
-  margin-bottom: 4em; /* pushes body text down */
+  margin-bottom: 2em; /* pushes body text down */
 }
 /* Tablet */
 @media (max-width: 1024px) {
   .site-banner {
-    height: 80px;  /* let it expand naturally */
+    height: auto;  /* let it expand naturally */
+    margin-bottom: 1.5em
   }
 }
 /* Mobile */
 @media (max-width: 480px) {
   .site-banner {
-    height: 80px;  /* shrunk but don't crop */
-    width: auto;
-    margin-bottom: lem  /* add spacing below banner */
+    height: auto;  /* shrunk but don't crop */
+    margin-bottom: l.5em  /* add spacing below banner */
   }
 }
 
