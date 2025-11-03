@@ -138,16 +138,16 @@ body.fade-in {
 }
 /* Banner container */
 .site-banner {
-  display: flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   height: 50px;      /* desktop default */
   overflow: hidden;       /* crops if image is taller than max-height */
   }
 /* Banner image */
 .site-banner img {
-  width: 70%;        /* prevents overflow horizontally */
-  height: 70%;           /* keeps proportions */
+  width: 50%;        /* prevents overflow horizontally */
+  height: 50%;           /* keeps proportions */
   object-fit: cover;      /* ensures it fills nicely without distortion */
 }
 /* Tablet */
