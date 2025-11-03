@@ -146,18 +146,18 @@ body.fade-in {
   }
 /* Banner image */
 .site-banner img {
-  width: 50%;        /* prevents overflow horizontally */
-  height: 50%;           /* keeps proportions */
+  width: 70%;        /* prevents overflow horizontally */
+  height: 70%;           /* keeps proportions */
   object-fit: cover;      /* ensures it fills nicely without distortion */
 }
 /* Tablet */
-@media (max-width: 300px) {
+@media (max-width: 150px) {
   .site-banner {
     height: 30px;
   }
 }
 /* Mobile */
-@media (max-width: 300px) {
+@media (max-width: 150px) {
   .site-banner {
     height: 30px;
   }
