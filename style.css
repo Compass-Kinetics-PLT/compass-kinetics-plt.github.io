@@ -136,33 +136,30 @@ body.fade-in {
   background: linear-gradient(to right, #ccc, #005a5a, #ccc);
   margin: 3em 0;
 }
-/* Banner styling */
+/* Banner container */
 .site-banner {
-  max-height: 150px;       /* adjust to your preferred desktop size */
-  background-size: cover;
-  background-position: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden; /* crop if image is taller */
+  align-items: center;
+  overflow: hidden;       /* crops if image is taller than max-height */
+  max-height: 200px;      /* desktop default */
 }
-
+/* Banner image */
 .site-banner img {
-  max-width: 100%;   /* prevents overflow */
-  height: auto;      /* keeps proportions */
+  max-width: 100%;        /* prevents overflow horizontally */
+  height: auto;           /* keeps proportions */
+  object-fit: cover;      /* ensures it fills nicely without distortion */
 }
-
-/* Tablet and smaller screens */
+/* Tablet */
 @media (max-width: 1024px) {
   .site-banner {
-    max-height: 150px;     /* smaller height for tablets */
+    max-height: 150px;
   }
 }
-/* Mobile phones */
+/* Mobile */
 @media (max-width: 600px) {
   .site-banner {
-    max-height: 150px;     /* even smaller for phones */
+    max-height: 100px;
   }
 }
-
 
