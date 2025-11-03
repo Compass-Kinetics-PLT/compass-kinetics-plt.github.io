@@ -142,12 +142,12 @@ body.fade-in {
   justify-content: center;
   align-items: center;
   overflow: hidden;       /* crops if image is taller than max-height */
-  max-height: 100px;      /* desktop default */
+  max-height: 150px;      /* desktop default */
 }
 /* Banner image */
 .site-banner img {
   max-width: 100%;        /* prevents overflow horizontally */
-  height: auto;           /* keeps proportions */
+  max-height: 100%;           /* keeps proportions */
   object-fit: cover;      /* ensures it fills nicely without distortion */
 }
 /* Tablet */
