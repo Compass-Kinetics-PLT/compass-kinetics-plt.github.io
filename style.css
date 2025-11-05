@@ -1,27 +1,49 @@
 /* =========================
+   Theme Variables
+   ========================= */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #222;
+  --accent-color: #2c3e50;
+  --accent-hover: #357f89;
+  --hero-bg: #f0f4f8;
+  --divider-bg: #fafafa;
+  --footer-bg: #2c3e50;
+  --footer-text: #fff;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --accent-color: #4ca1af;
+  --accent-hover: #76c7c0;
+  --hero-bg: #2a2a2a;
+  --divider-bg: #1e1e1e;
+  --footer-bg: #111;
+  --footer-text: #ccc;
+}
+
+/* =========================
    Base Styling
    ========================= */
 body {
   font-family: 'Merriweather', serif;
-  background-color: #fafafa;
-  color: #222;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
   opacity: 0;
-  transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;
 }
 body.fade-in {
   opacity: 1;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  margin-top: 0;
-}
+/* Headings */
+h1, h2, h3 { font-weight: 600; margin-top: 0; }
 h1 { font-size: 2.5rem; margin-bottom: 0.5em; }
 h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
-p, li { font-size: 1rem; }
 
 /* =========================
    Header & Navigation
@@ -30,7 +52,7 @@ p, li { font-size: 1rem; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #2c3e50, #34495e);
+  background: var(--accent-color);
   padding: 1rem 2rem;
 }
 .site-header a {
@@ -46,7 +68,22 @@ p, li { font-size: 1rem; }
   padding: 0;
 }
 .site-nav a.active {
-  border-bottom: 2px solid #4ca1af;
+  border-bottom: 2px solid var(--accent-hover);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  transition: background 0.3s;
+}
+.theme-toggle:hover {
+  background: var(--accent-hover);
 }
 
 /* =========================
@@ -55,12 +92,11 @@ p, li { font-size: 1rem; }
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background: #f0f4f8;
+  background: var(--hero-bg);
 }
 .hero .tagline {
   font-style: italic;
   color: #555;
-  margin-top: 0.5rem;
 }
 
 /* =========================
@@ -71,34 +107,6 @@ p, li { font-size: 1rem; }
   margin: 2rem auto;
   padding: 0 1rem;
 }
-.feature-list {
-  list-style: disc;
-  padding-left: 1.5rem;
-}
-
-/* =========================
-   Book & Course Cards
-   ========================= */
-.book-card, .course-card, .trainer-profile {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-.book-cover img {
-  max-width: 200px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-.book-details, .trainer-details {
-  flex: 1;
-}
-.book-meta {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
 
 /* =========================
    Buttons & Links
@@ -106,7 +114,7 @@ p, li { font-size: 1rem; }
 .buy-button, .back-button, .download-link {
   display: inline-block;
   padding: 0.6rem 1rem;
-  background: #2c3e50;
+  background: var(--accent-color);
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
@@ -115,11 +123,8 @@ p, li { font-size: 1rem; }
   margin-top: 1rem;
 }
 .buy-button:hover, .back-button:hover, .download-link:hover {
-  background: #357f89;
+  background: var(--accent-hover);
   transform: translateY(-2px);
-}
-.download-link {
-  margin-left: 0.5em;
 }
 
 /* =========================
@@ -138,7 +143,7 @@ p, li { font-size: 1rem; }
   top: -0.8rem;
   left: 50%;
   transform: translateX(-50%);
-  background: #fafafa;
+  background: var(--divider-bg);
   padding: 0 0.5rem;
   font-size: 1.2rem;
   color: #666;
@@ -155,33 +160,12 @@ p, li { font-size: 1rem; }
 .site-footer {
   text-align: center;
   padding: 1.5rem;
-  background: #2c3e50;
-  color: #fff;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   margin-top: 3rem;
 }
 .site-footer a {
   color: #ddd;
   margin: 0 0.5rem;
   text-decoration: none;
-}
-
-/* =========================
-   Responsive Adjustments
-   ========================= */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  .book-card, .course-card, .trainer-profile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .book-cover img, .trainer-photo {
-    max-width: 100%;
-  }
-}
-@media (max-width: 480px) {
-  body { font-size: 0.9rem; }
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.3rem; }
 }
