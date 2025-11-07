@@ -221,11 +221,14 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   background: var(--footer-bg);
   color: var(--footer-text);
   margin-top: 1.0rem;
+  font-size: 0.9rem;   /* smaller text */
+  line-height: 1.4;    /* tighter spacing */
 }
 .site-footer a {
   color: #ddd;
-  margin: 0 0.1rem;
+  margin: 0 0.3rem;
   text-decoration: none;
+  font-size: inherit;   /* keeps same smaller size */
 }
 
 /* =========================
