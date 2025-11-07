@@ -31,8 +31,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.2;
   opacity: 0;
   transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;
 }
