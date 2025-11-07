@@ -93,7 +93,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 
 /* Hamburger button (hidden on desktop) */
 .menu-toggle {
-  display: block;
+  display: none; /* hidden on desktop */
   font-size: 1.5rem;
   background: none;
   border: none;
@@ -108,8 +108,19 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
     flex-wrap: wrap;
   }
 
+  .menu-toggle {
+    display: block; /* show hamburger */
+    order: 1;       /* ensure it stays left */
+  }
+
+  .logo {
+    order: 2;       /* logo after hamburger */
+    flex: 1;
+    text-align: center;
+  }
   
   .header-right {
+    order: 3;
     width: 100%;
     display: none;
     flex-direction: column;
