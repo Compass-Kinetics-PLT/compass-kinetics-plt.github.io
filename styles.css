@@ -49,12 +49,23 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
    Header & Navigation
    ========================= */
 .site-header {
+  position: fixed;   /* keeps header at top */
+  top: 0;            /* align to very top */
+  left: 0;
+  width: 100%;       /* full width */
+  z-index: 1000;     /* ensures it stays above banners/content */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--accent-color);
   padding: 1rem 2rem;
 }
+
+/* Add spacing so content doesn’t hide behind fixed header */
+main {
+  padding-top: 80px; /* adjust based on header height */
+}
+
 .site-header a {
   color: #fff;
   text-decoration: none;
