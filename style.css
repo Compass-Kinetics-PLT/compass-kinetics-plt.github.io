@@ -70,7 +70,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   display: flex;
   gap: 1rem;
   margin: 0;
-  padding: 0;
+  padding: 2;
 }
 .site-nav a.active {
   border-bottom: 2px solid var(--accent-hover);
