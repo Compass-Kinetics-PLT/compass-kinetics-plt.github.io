@@ -53,12 +53,14 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   top: 100px;            /* adjust to banner height */
   left: 0;
   width: 100%;       /* full width */
-  z-index: 1000;     /* ensures it stays above banners/content */
+  z-index: 2000;     /* ensures it stays above banners/content */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--accent-color);
   padding: 1rem 2rem;
+  box-sizing: border-box; /* include padding in width */
+  overflow-x: hidden; 
 }
 
 /* Add spacing so content doesn’t hide behind fixed header */
