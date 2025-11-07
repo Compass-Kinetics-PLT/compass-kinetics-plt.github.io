@@ -1,124 +1,306 @@
-/* 🌏 Global content wrapper */
-main, .content {
-  max-width: 900px;     /* keeps text in a readable column */
-  margin: 0 auto;       /* centers the block horizontally */
-  padding: 0 20px;      /* adds breathing room left/right */
-  box-sizing: border-box;
+/* =========================
+   Theme Variables
+   ========================= */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #222;
+  --accent-color: #2c3e50;
+  --accent-hover: #357f89;
+  --hero-bg: #f0f4f8;
+  --divider-bg: #fafafa;
+  --footer-bg: #2c3e50;
+  --footer-text: #fff;
 }
 
-/* Headings spacing */
-h1, h2, h3 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  line-height: 1.2;
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --accent-color: #4ca1af;
+  --accent-hover: #76c7c0;
+  --hero-bg: #2a2a2a;
+  --divider-bg: #1e1e1e;
+  --footer-bg: #111;
+  --footer-text: #ccc;
 }
 
-/* Paragraph spacing */
-p {
-  margin-bottom: 1em;
-}
-
-
-/* 🌐 Base Styles */
+/* =========================
+   Base Styling
+   ========================= */
 body {
-  font-family: "Segoe UI", "Noto Sans", sans-serif;
-  font-size: 16px; /* default for desktops */
-  line-height: 1.6;
+  font-family: 'Merriweather', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
-  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;
+}
+body.fade-in {
+  opacity: 1;
 }
 
-/* 🖼 Banner */
-.site-banner img {
+/* Headings */
+h1, h2, h3 { font-weight: 600; margin-top: 0; }
+h1 { font-size: 2.5rem; margin-bottom: 0.5em; }
+h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
+
+/* =========================
+   Header & Navigation
+   ========================= */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent-color);
+  padding: 1rem 2rem;
+}
+.site-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between nav and toggle */
+}
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 2;
+}
+.site-nav a.active {
+  border-bottom: 2px solid var(--accent-hover);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  transition: background 0.3s;
+}
+.theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+/* Hamburger button (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header-right {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--accent-color);
+    padding: 1rem;
+    animation: slide-down 0.3s ease-out;
+  }
+
+  .header-right.active {
+    display: flex;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .theme-toggle {
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+}
+
+/* Slide-down animation */
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--hero-bg);
+}
+.hero .tagline {
+  font-style: italic;
+  color: #555;
+}
+
+/* =========================
+   Content Blocks
+   ========================= */
+.content-block {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* =========================
+   Buttons & Links
+   ========================= */
+.buy-button, .back-button, .download-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+.buy-button:hover, .back-button:hover, .download-link:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Scroll Divider
+   ========================= */
+.scroll-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 3rem auto;
+  width: 60%;
+  position: relative;
+}
+.scroll-divider::after {
+  content: "✦";
+  position: absolute;
+  top: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--divider-bg);
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #666;
+  animation: slow-spin 20s linear infinite;
+}
+@keyframes slow-spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  margin-top: 3rem;
+}
+.site-footer a {
+  color: #ddd;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.banner-img {
+  width: 100%;          /* full width across the page */
+  height: auto;         /* keep proportions */
+  display: block;       /* removes inline spacing */
+  margin: 0 auto;       /* center if smaller than full width */
+  border-radius: 4px;   /* optional rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+.top-banner, .bottom-banner {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.top-banner {
+  position: relative;
+  margin-top: -3rem;   /* pull banner upward */
+  z-index: 0;          /* behind nav */
+}
+
+.site-nav {
+  position: relative;
+  z-index: 1;          /* nav stays on top */
+}
+.banner-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 
-/* 📸 Team Photos */
-.team-member img {
-  max-width: 120px;
-  height: auto;
-  border-radius: 8px;
+/* =========================
+   Banner Styling (Unified)
+   ========================= */
+
+/* Banner container */
+.site-banner {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  overflow: visible;       /* never crop */
+  margin-bottom: 2em;      /* space below banner so text doesn't overlap */
+}
+
+/* Banner image */
+.site-banner img {
+  max-width: 100%;         /* responsive width */
+  height: auto;            /* keep proportions */
+  object-fit: contain;     /* always show full image, no crop/zoom */
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
-/* 📝 Text Blocks */
-h1, h2, h3 {
-  line-height: 1.3;
-  margin: 0.5em 0;
-}
-p {
-  margin: 0.5em 0;
-}
-
-/* 📱 Responsive Typography & Layout */
+/* Tablet adjustments */
 @media (max-width: 1024px) {
-  body {
-    font-size: 15px;
-  }
-  .team-member img {
-    max-width: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  h1 {
-    font-size: 1.8em;
-  }
-  h2 {
-    font-size: 1.4em;
+  .site-banner {
+    margin-bottom: 1.5em;  /* slightly less spacing */
   }
   .site-banner img {
-    object-position: center;
-  }
-  .team-member img {
-    max-width: 80px;
+    max-height: 200px;     /* optional: cap banner height */
   }
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 13px;
-  }
-  h1 {
-    font-size: 1.5em;
-  }
-  h2 {
-    font-size: 1.2em;
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .site-banner {
+    margin-bottom: 1.5em;
   }
   .site-banner img {
-    height: auto;
-  }
-  .team-member img {
-    max-width: 70px;
+    max-height: 150px;     /* keep banner slim on phones */
   }
 }
-
-/* 🌏 Footer Styling */
-.site-footer {
-  background-color: navy;   /* navy blue background */
-  color: white;             /* white text */
-  text-align: center;       /* center-align text */
-  padding: 20px;            /* spacing inside footer */
-  font-size: 0.95rem;       /* slightly smaller text */
+.book-details p {
+  line-height: 1.6;
 }
 
-.site-footer p {
-  margin: 5px 0;            /* reduce spacing between lines */
-}
 
-.site-footer .footer-nav a {
-  color: white;             /* white links */
-  text-decoration: none;    /* remove underline */
-  margin: 0 8px;            /* spacing between links */
-}
-
-.site-footer .footer-nav a:hover {
-  text-decoration: underline; /* underline on hover for clarity */
-}
