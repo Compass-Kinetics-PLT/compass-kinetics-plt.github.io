@@ -258,4 +258,49 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   display: block;
 }
 
+/* =========================
+   Banner Styling (Unified)
+   ========================= */
+
+/* Banner container */
+.site-banner {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  overflow: visible;       /* never crop */
+  margin-bottom: 2em;      /* space below banner so text doesn't overlap */
+}
+
+/* Banner image */
+.site-banner img {
+  max-width: 100%;         /* responsive width */
+  height: auto;            /* keep proportions */
+  object-fit: contain;     /* always show full image, no crop/zoom */
+  display: block;
+  margin: 0;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .site-banner {
+    margin-bottom: 1.5em;  /* slightly less spacing */
+  }
+  .site-banner img {
+    max-height: 200px;     /* optional: cap banner height */
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .site-banner {
+    margin-bottom: 1.5em;
+  }
+  .site-banner img {
+    max-height: 150px;     /* keep banner slim on phones */
+  }
+}
+.book-details p {
+  line-height: 1.6;
+}
+
 
