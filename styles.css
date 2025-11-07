@@ -303,4 +303,52 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   line-height: 1.6;
 }
 
+/* 📚 Book Section */
+.book-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;   /* stack cover and details vertically */
+  align-items: center;      /* center everything horizontally */
+  max-width: 600px;         /* keeps layout readable */
+  margin: 0 auto;
+}
+
+/* Book cover images */
+.book-cover {
+  display: flex;
+  justify-content: center;
+  gap: 20px;                /* space between front/back covers */
+  flex-wrap: wrap;          /* allows stacking on small screens */
+}
+
+.book-cover img {
+  width: 45%;               /* each takes ~half width */
+  max-width: 250px;
+  height: auto;
+}
+
+
+.book-cover img {
+  width: 100%;              /* scales with container */
+  height: auto;             /* keeps aspect ratio */
+  max-width: 300px;         /* optional: limit max size */
+  margin-bottom: 20px;      /* space below image */
+}
+
+/* Book details */
+.book-details {
+  text-align: center;       /* center text under image */
+}
+
+.book-meta {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 
