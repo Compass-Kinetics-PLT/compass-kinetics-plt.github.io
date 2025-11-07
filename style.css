@@ -227,3 +227,9 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   margin: 0 0.5rem;
   text-decoration: none;
 }
+
+<!-- Banner under navigation -->
+<div class="top-banner">
+  <img src="images/top-banner.jpg" alt="Compass Kinetics Banner" class="banner-img">
+</div>
+
