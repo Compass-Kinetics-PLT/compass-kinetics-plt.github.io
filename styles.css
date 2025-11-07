@@ -319,25 +319,13 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 }
 
 /* Book cover images */
-.book-cover {
-  display: flex;
-  justify-content: center;
-  gap: 20px;                /* space between front/back covers */
-  flex-wrap: wrap;          /* allows stacking on small screens */
-}
-
-.book-cover img {
-  width: 45%;               /* each takes ~half width */
-  max-width: 250px;
-  height: auto;
-}
-
-
 .book-cover img {
   width: 100%;              /* scales with container */
   height: auto;             /* keeps aspect ratio */
   max-width: 300px;         /* optional: limit max size */
   margin-bottom: 20px;      /* space below image */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+  border-radius: 4px;       /* soft corners */
 }
 
 /* Book details */
@@ -345,10 +333,21 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   text-align: center;       /* center text under image */
 }
 
+/* Book metadata with scroll-style divider */
 .book-meta {
-  margin: 10px 0;
+  margin: 20px 0;
   font-size: 0.95rem;
   line-height: 1.4;
+  position: relative;
+  padding-top: 1rem;
 }
 
-
+.book-meta::before {
+  content: "✦";             /* scroll-style motif */
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 1.2rem;
+  animation: slow-spin 20s linear infinite; /* matches your divider spin */
+}
