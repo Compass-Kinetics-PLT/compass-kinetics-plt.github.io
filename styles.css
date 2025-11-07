@@ -228,36 +228,6 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   text-decoration: none;
 }
 
-.banner-img {
-  width: 100%;          /* full width across the page */
-  height: auto;         /* keep proportions */
-  display: block;       /* removes inline spacing */
-  margin: 0 auto;       /* center if smaller than full width */
-  border-radius: 4px;   /* optional rounded corners */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
-}
-
-.top-banner, .bottom-banner {
-  text-align: center;
-  margin: 1rem 0;
-}
-
-.top-banner {
-  position: relative;
-  margin-top: -3rem;   /* pull banner upward */
-  z-index: 0;          /* behind nav */
-}
-
-.site-nav {
-  position: relative;
-  z-index: 1;          /* nav stays on top */
-}
-.banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* =========================
    Banner Styling (Unified)
    ========================= */
@@ -286,7 +256,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
     margin-bottom: 1.5em;  /* slightly less spacing */
   }
   .site-banner img {
-    max-height: 200px;     /* optional: cap banner height */
+    max-height: 150px;     /* optional: cap banner height */
   }
 }
 
@@ -296,7 +266,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
     margin-bottom: 1.5em;
   }
   .site-banner img {
-    max-height: 150px;     /* keep banner slim on phones */
+    max-height: 100px;     /* keep banner slim on phones */
   }
 }
 .book-details p {
