@@ -50,7 +50,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
    ========================= */
 .site-header {
   position: fixed;   /* keeps header at top */
-  top: 0;            /* align to very top */
+  top: 100px;            /* adjust to banner height */
   left: 0;
   width: 100%;       /* full width */
   z-index: 1000;     /* ensures it stays above banners/content */
@@ -63,7 +63,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 
 /* Add spacing so content doesn’t hide behind fixed header */
 main {
-  padding-top: 80px; /* adjust based on header height */
+  padding-top: 180px; /* adjust based on header height + banner height */
 }
 
 .site-header a {
@@ -256,7 +256,11 @@ main {
 
 /* Banner container */
 .site-banner {
+  position: fixed;
+  top: 0;
+  left: 0; 
   width: 100%;
+  z-index: 999; /* sits above content but below header if needed */ 
   text-align: center;
   margin: 0;
   overflow: visible;       /* never crop */
