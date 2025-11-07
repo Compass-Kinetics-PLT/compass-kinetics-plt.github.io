@@ -65,7 +65,7 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 
 /* Add spacing so content doesn’t hide behind fixed header */
 main {
-  padding-top: 180px; /* adjust based on header height + banner height */
+  padding-top: 10px; /* adjust based on header height + banner height */
 }
 
 .site-header a {
@@ -169,6 +169,7 @@ main {
    Hero Section
    ========================= */
 .hero {
+  margin-top: 180px; /* pushes hero down below banner+header */
   text-align: center;
   padding: 3rem 1rem;
   background: var(--hero-bg);
