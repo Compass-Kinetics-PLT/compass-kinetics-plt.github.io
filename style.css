@@ -228,8 +228,18 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
   text-decoration: none;
 }
 
-<!-- Banner under navigation -->
-<div class="top-banner">
-  <img src="images/top-banner.jpg" alt="Compass Kinetics Banner" class="banner-img">
-</div>
+.banner-img {
+  width: 100%;          /* full width across the page */
+  height: auto;         /* keep proportions */
+  display: block;       /* removes inline spacing */
+  margin: 0 auto;       /* center if smaller than full width */
+  border-radius: 4px;   /* optional rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+.top-banner, .bottom-banner {
+  text-align: center;
+  margin: 1rem 0;
+}
+
 
