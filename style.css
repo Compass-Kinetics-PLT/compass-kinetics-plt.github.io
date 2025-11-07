@@ -72,7 +72,7 @@ img.trainer-photo {
   background: #357f89;
   transform: translateY(-2px);
 }
-footer {
+.site-footer {
   background: #2c3e50;
   color: #f0f0f0;
   text-align: center;
@@ -81,7 +81,7 @@ footer {
   margin-top: 3rem;
   border-top: 3px solid #4ca1af;
 }
-footer p {
+.site-footer p {
   margin: 0.3rem 0;
 }
 
