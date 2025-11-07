@@ -217,10 +217,10 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
    ========================= */
 .site-footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.0rem;
   background: var(--footer-bg);
   color: var(--footer-text);
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 .site-footer a {
   color: #ddd;
