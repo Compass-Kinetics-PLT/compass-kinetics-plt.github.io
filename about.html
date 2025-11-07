@@ -89,10 +89,25 @@
     </nav>
   </footer>
 
-   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.add("fade-in");
-    });
+<script>
+  // Fade-In
+  document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("fade-in");
+  });
+    
+  // Theme toggle
+  const toggleBtn = document.getElementById('themeToggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const headerRight = document.querySelector('.header-right');
+  menuToggle.addEventListener('click', () => {
+    headerRight.classList.toggle('active');
+  });
   </script>
 
   
