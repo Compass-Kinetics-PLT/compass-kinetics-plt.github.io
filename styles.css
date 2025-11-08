@@ -169,7 +169,7 @@ main {
    Hero Section
    ========================= */
 .hero {
-  margin-top: 180px; /* pushes hero down below banner+header */
+  margin-top: 150px; /* pushes hero down below banner+header */
   text-align: center;
   padding: 3rem 1rem;
   background: var(--hero-bg);
