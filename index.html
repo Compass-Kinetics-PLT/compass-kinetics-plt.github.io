@@ -84,27 +84,44 @@
   </footer>
   
   <script>
-  // Fade-In
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", () => {
+    // 🌟 Fade-In Effect
     document.body.classList.add("fade-in");
-  });
 
-    document.addEventListener("DOMContentLoaded", function() {
-    // Theme toggle
+    // 🌗 Theme Toggle
     const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = isDark ? '🌙' : '☀️';
     });
 
-    // Hamburger menu toggle
+    // 🍔 Hamburger Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const headerRight = document.getElementById('headerRight');
-    menuToggle.addEventListener('click', () => {
+
+    menuToggle?.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent immediate close
       headerRight.classList.toggle('active');
     });
+
+    // 🧹 Auto-Close Menu on Outside Click
+    document.addEventListener('click', (e) => {
+      if (!headerRight.contains(e.target) && !menuToggle.contains(e.target)) {
+        headerRight.classList.remove('active');
+      }
+    });
+
+    // 📱 Auto-Close on Scroll or Touch Move
+    window.addEventListener('scroll', () => {
+      headerRight.classList.remove('active');
+    });
+
+    window.addEventListener('touchmove', () => {
+      headerRight.classList.remove('active');
+    });
   });
-  </script>
+</script>
+
   
 </body>
 </html>
