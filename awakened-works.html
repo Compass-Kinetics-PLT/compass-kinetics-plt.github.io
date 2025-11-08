@@ -121,6 +121,21 @@
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.add("fade-in");
     });
+    document.addEventListener("DOMContentLoaded", function() {
+    // Theme toggle
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    });
+
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const headerRight = document.getElementById('headerRight');
+    menuToggle.addEventListener('click', () => {
+      headerRight.classList.toggle('active');
+    });
+  });
   </script>
 
 </body>
