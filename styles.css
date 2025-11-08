@@ -272,11 +272,12 @@ main {
 
 /* Banner image */
 .site-banner img {
-  max-width: 100%;         /* responsive width */
+  width: 100%;         /* Ensure full width of container */
   height: auto;            /* keep proportions */
   object-fit: contain;     /* always show full image, no crop/zoom */
   display: block;
-  margin: 0;
+  margin: 0 auto;
+  max-height: 200px; /* Optional: cap height for large screens */ 
 }
 
 /* Tablet adjustments */
