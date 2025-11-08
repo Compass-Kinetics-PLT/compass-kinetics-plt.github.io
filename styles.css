@@ -34,9 +34,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.6;
   opacity: 0;
-  transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;
-  justify-content: center;   /* horizontal centering */
-  align-items: center;       /* vertical centering */
+  transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;  
 }
 body.fade-in {
   animation: fadeIn 1s ease-in forwards;
@@ -72,6 +70,8 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 }
 main {
   padding-top: 10px;
+  justify-content: center;   /* horizontal centering */
+  align-items: center;       /* vertical centering */ 
 }
 .site-header a {
   color: #fff;
