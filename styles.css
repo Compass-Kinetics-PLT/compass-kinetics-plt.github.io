@@ -391,8 +391,11 @@ body.fade-in {
 }
 /* Mobile: hide nav unless toggled */
 #headerRight {
-  display: none;
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
+
 
 #headerRight.active {
   display: block;
