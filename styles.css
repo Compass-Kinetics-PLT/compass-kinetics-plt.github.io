@@ -415,5 +415,11 @@ body.fade-in {
     flex-direction: column;
   }
 }
+@media (max-width: 768px) {
+  #headerRight.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
 
 
