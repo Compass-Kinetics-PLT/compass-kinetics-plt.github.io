@@ -82,24 +82,52 @@
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", () => {
+    // 🌟 Fade-In Effect
     document.body.classList.add("fade-in");
-  });
 
-    document.addEventListener("DOMContentLoaded", function() {
-    // Theme toggle
+    // 🌗 Theme Toggle with Persistence
     const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      if (toggleBtn) toggleBtn.textContent = '🌙';
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // Hamburger menu toggle
+    // 🍔 Hamburger Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const headerRight = document.getElementById('headerRight');
-    menuToggle.addEventListener('click', () => {
+
+    menuToggle?.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent immediate close
       headerRight.classList.toggle('active');
     });
+
+    // 🎭 Smooth Menu Fade-Out Function
+    function closeMenuSmoothly() {
+      if (headerRight.classList.contains('active')) {
+        headerRight.classList.add('fade-out');
+        setTimeout(() => {
+          headerRight.classList.remove('active', 'fade-out');
+        }, 300); // Match CSS transition duration
+      }
+    }
+
+    // 🧹 Auto-Close Triggers
+    document.addEventListener('click', (e) => {
+      if (!headerRight.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMenuSmoothly();
+      }
+    });
+
+    window.addEventListener('scroll', closeMenuSmoothly);
+    window.addEventListener('touchmove', closeMenuSmoothly);
   });
 </script>
   
