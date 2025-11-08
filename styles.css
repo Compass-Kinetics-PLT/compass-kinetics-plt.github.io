@@ -389,4 +389,23 @@ body.fade-in {
   opacity: 0;
   pointer-events: none;
 }
+/* Mobile: hide nav unless toggled */
+#headerRight {
+  display: none;
+}
+
+#headerRight.active {
+  display: block;
+}
+
+/* Desktop: always show nav */
+@media (min-width: 768px) {
+  #headerRight {
+    display: flex !important; /* or block, depending on layout */
+  }
+
+  #menuToggle {
+    display: none; /* hide hamburger on desktop */
+  }
+}
 
