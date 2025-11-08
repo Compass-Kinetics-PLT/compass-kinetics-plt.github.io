@@ -277,7 +277,7 @@ main {
   object-fit: cover;     /* cover-stretches to fill container. contain-always show full image, no crop/zoom */
   display: block;
   margin: 0 auto;
-  max-height: 150px; /* Optional: cap height for large screens */ 
+  max-height: 100px; /* Optional: cap height for large screens */ 
 }
 
 /* Tablet adjustments */
@@ -286,7 +286,7 @@ main {
     margin-bottom: 1.5em;  /* slightly less spacing */
   }
   .site-banner img {
-    max-height: 150px;     /* optional: cap banner height */
+    max-height: 100px;     /* optional: cap banner height */
   }
 }
 
