@@ -263,7 +263,7 @@ main {
   top: 0;
   left: 0; 
   width: 100%;
-  z-index: 999; /* sits above content but below header if needed */ 
+  z-index: 500; /* sits above content but below header if needed */ 
   text-align: center;
   margin: 0;
   overflow: visible;       /* never crop */
