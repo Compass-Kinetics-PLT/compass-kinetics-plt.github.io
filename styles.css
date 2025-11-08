@@ -312,9 +312,10 @@ main {
 
 .book-card {
   display: flex;
-  flex-direction: column;   /* stack cover and details vertically */
+  flex-direction: row;   /* row stack side by side. column-stack cover and details vertically */
   align-items: center;      /* center everything horizontally */
-  max-width: 600px;         /* keeps layout readable */
+  gap: 2rem;
+  max-width: 1000px;         /* keeps layout readable 600-1000 */
   margin: 0 auto;
 }
 
@@ -350,4 +351,15 @@ main {
   color: #666;
   font-size: 1.2rem;
   animation: slow-spin 20s linear infinite; /* matches your divider spin */
+}
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .book-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-details {
+    text-align: center;
+  }
 }
