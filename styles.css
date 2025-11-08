@@ -277,7 +277,7 @@ main {
   object-fit: cover;     /* cover-stretches to fill container. contain-always show full image, no crop/zoom */
   display: block;
   margin: 0 auto;
-  max-height: 100px; /* Optional: cap height for large screens */ 
+  max-height: 300px; /* Optional: cap height for large screens */ 
 }
 
 /* Tablet adjustments */
@@ -286,7 +286,7 @@ main {
     margin-bottom: 1.5em;  /* slightly less spacing */
   }
   .site-banner img {
-    max-height: 100px;     /* optional: cap banner height */
+    max-height: 300px;     /* optional: cap banner height */
   }
 }
 
@@ -296,7 +296,7 @@ main {
     margin-bottom: 1.5em;
   }
   .site-banner img {
-    max-height: 100px;     /* keep banner slim on phones */
+    max-height: 300px;     /* keep banner slim on phones */
   }
 }
 .book-details p {
