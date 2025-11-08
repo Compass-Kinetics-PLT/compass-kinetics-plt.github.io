@@ -70,8 +70,9 @@ h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 }
 main {
   padding-top: 10px;
-  justify-content: center;   /* horizontal centering */
-  align-items: center;       /* vertical centering */ 
+  max-width: 960px;       /* or 70%, or any width you prefer */
+  margin: 0 auto;         /* centers horizontally */
+  padding: 0 20px;        /* optional: adds breathing room on small screens */
 }
 .site-header a {
   color: #fff;
