@@ -1,5 +1,5 @@
 /* =========================
-   🌗 Theme Variables
+   Theme Variables
    ========================= */
 :root {
   --bg-color: #fafafa;
@@ -24,7 +24,7 @@ body.dark-mode {
 }
 
 /* =========================
-   🌟 Base Styling
+   Base Styling
    ========================= */
 body {
   font-family: 'Merriweather', serif;
@@ -32,48 +32,42 @@ body {
   color: var(--text-color);
   margin: 0;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.2;
   opacity: 0;
-  transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;  
+  transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;
 }
 body.fade-in {
-  animation: fadeIn 1s ease-in forwards;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  opacity: 1;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  margin-top: 0;
-}
+/* Headings */
+h1, h2, h3 { font-weight: 600; margin-top: 0; }
 h1 { font-size: 2.5rem; margin-bottom: 0.5em; }
 h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
 
 /* =========================
-   🧭 Header & Navigation
+   Header & Navigation
    ========================= */
 .site-header {
-  position: fixed;
-  top: 100px;
+  position: fixed;   /* keeps header at top */
+  top: 100px;            /* adjust to banner height */
   left: 0;
-  width: 100%;
-  z-index: 2000;
+  width: 100%;       /* full width */
+  z-index: 2000;     /* ensures it stays above banners/content */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--accent-color);
   padding: 1rem 2rem;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  box-sizing: border-box; /* include padding in width */
+  overflow-x: hidden; 
 }
+
+/* Add spacing so content doesn’t hide behind fixed header */
 main {
-  padding-top: 10px;
-  max-width: 960px;       /* or 70%, or any width you prefer */
-  margin: 0 auto;         /* centers horizontally */
-  padding: 0 20px;        /* optional: adds breathing room on small screens */
+  padding-top: 10px; /* adjust based on header height + banner height */
 }
+
 .site-header a {
   color: #fff;
   text-decoration: none;
@@ -82,7 +76,7 @@ main {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1rem; /* space between nav and toggle */
 }
 .site-nav ul {
   list-style: none;
@@ -95,7 +89,7 @@ main {
   border-bottom: 2px solid var(--accent-hover);
 }
 
-/* 🌗 Theme Toggle Button */
+/* Theme Toggle Button */
 .theme-toggle {
   background: none;
   border: 2px solid #fff;
@@ -104,38 +98,40 @@ main {
   font-size: 1rem;
   cursor: pointer;
   padding: 0.4rem 0.6rem;
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.3s;
 }
 .theme-toggle:hover {
   background: var(--accent-hover);
-  transform: rotate(20deg);
 }
 
-/* 🍔 Hamburger Button */
+/* Hamburger button (hidden on desktop) */
 .menu-toggle {
-  display: none;
+  display: none; /* hidden on desktop */
   font-size: 1.5rem;
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: 1rem; /* space between toggle and logo */
 }
 
-/* 📱 Mobile Styles */
+/* Mobile styles */
 @media (max-width: 768px) {
   .site-header {
     flex-wrap: wrap;
   }
+
   .menu-toggle {
-    display: block;
-    order: 1;
+    display: block; /* show hamburger */
+    order: 1;       /* ensure it stays left */
   }
+
   .logo {
-    order: 2;
+    order: 2;       /* logo after hamburger */
     flex: 1;
     text-align: center;
   }
+  
   .header-right {
     order: 3;
     width: 100%;
@@ -146,31 +142,34 @@ main {
     padding: 1rem;
     animation: slide-down 0.3s ease-out;
   }
+
   .header-right.active {
     display: flex;
   }
+
   .site-nav ul {
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
   }
+
   .theme-toggle {
     align-self: flex-end;
     margin-top: 1rem;
   }
 }
 
-/* 🪶 Slide-down Animation */
+/* Slide-down animation */
 @keyframes slide-down {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================
-   ✨ Hero Section
+   Hero Section
    ========================= */
 .hero {
-  margin-top: 180px;
+  margin-top: 180px; /* pushes hero down below banner+header */
   text-align: center;
   padding: 3rem 1rem;
   background: var(--hero-bg);
@@ -181,63 +180,16 @@ main {
 }
 
 /* =========================
-   📚 Book Section
+   Content Blocks
    ========================= */
-.book-section {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-.book-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.book-cover img {
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  border-radius: 4px;
-}
-.book-details {
-  text-align: center;
-}
-.book-details p {
-  line-height: 1.6;
-}
-.book-meta {
-  margin: 20px 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  position: relative;
-  padding-top: 1rem;
-}
-.book-meta::before {
-  content: "✦";
-  display: block;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #666;
-  font-size: 1.2rem;
-  animation: slow-spin 20s linear infinite;
-}
-@media (max-width: 768px) {
-  .book-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  .book-details {
-    text-align: center;
-  }
+.content-block {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 /* =========================
-   🔗 Buttons & Links
+   Buttons & Links
    ========================= */
 .buy-button, .back-button, .download-link {
   display: inline-block;
@@ -256,7 +208,7 @@ main {
 }
 
 /* =========================
-   ✦ Scroll Divider
+   Scroll Divider
    ========================= */
 .scroll-divider {
   border: none;
@@ -283,55 +235,58 @@ main {
 }
 
 /* =========================
-   🪷 Footer
+   Footer
    ========================= */
 .site-footer {
   text-align: center;
   padding: 0.5rem;
   background: var(--footer-bg);
   color: var(--footer-text);
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  margin-top: 1.0rem;
+  font-size: 0.9rem;   /* smaller text */
+  line-height: 1.4;    /* tighter spacing */
 }
 .site-footer a {
   color: #ddd;
   margin: 0 0.3rem;
   text-decoration: none;
-  font-size: inherit;
+  font-size: inherit;   /* keeps same smaller size */
 }
 
 /* =========================
-   🖼️ Banner Styling
+   Banner Styling (Unified)
    ========================= */
+
+/* Banner container */
 .site-banner {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; 
   width: 100%;
-  z-index: 500;
+  z-index: 500; /* sits above content but below header if needed */ 
   text-align: center;
   margin: 0;
-  overflow: visible;
-  margin-bottom: 2em;
+  overflow: visible;       /* never crop */
+  margin-bottom: 2em;      /* space below banner so text doesn't overlap */
 }
 
+/* Banner image */
 .site-banner img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%;         /* Ensure full width of container */
+  height: auto;            /* keep proportions */
+  object-fit: cover;     /* cover-stretches to fill container. contain-always show full image, no crop/zoom */
   display: block;
   margin: 0 auto;
-  max-height: 200px;
+  max-height: 200px; /* Optional: cap height for large screens */ 
 }
 
 /* Tablet adjustments */
 @media (max-width: 1024px) {
   .site-banner {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5em;  /* slightly less spacing */
   }
   .site-banner img {
-    max-height: 150px;
+    max-height: 150px;     /* optional: cap banner height */
   }
 }
 
@@ -341,25 +296,76 @@ main {
     margin-bottom: 1.5em;
   }
   .site-banner img {
-    max-height: 100px;
+    max-height: 100px;     /* keep banner slim on phones */
   }
 }
-
-/* =========================
-   🔄 Menu Fade-Out Transition
-   ========================= */
-.header-right.fade-out {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+.book-details p {
+  line-height: 1.6;
 }
 
-/* =========================
-   🌀 Utility Animations
-   ========================= */
-@keyframes slow-spin {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to { transform: translateX(-50%) rotate(360deg); }
+/* 📚 Book Section */
+.book-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: row;   /* row stack side by side. column-stack cover and details vertically */
+  align-items: center;      /* center everything horizontally */
+  gap: 2rem;
+  max-width: 1000px;         /* keeps layout readable 600-1000 */
+  margin: 0 auto;
+}
+
+/* Book cover images */
+.book-cover img {
+  width: 100%;              /* scales with container */
+  height: auto;             /* keeps aspect ratio */
+  max-width: 300px;         /* optional: limit max size */
+  margin-bottom: 20px;      /* space below image */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle shadow */
+  border-radius: 4px;       /* soft corners */
+}
+
+/* Book details */
+.book-details {
+  text-align: center;       /* center text under image */
+}
+
+/* Book metadata with scroll-style divider */
+.book-meta {
+  margin: 20px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.book-meta::before {
+  content: "✦";             /* scroll-style motif */
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 1.2rem;
+  animation: slow-spin 20s linear infinite; /* matches your divider spin */
+}
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .book-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .book-details {
+    text-align: center;
+  }
+}
+/* Fade-in effect */
+body.fade-in {
+  animation: fadeIn 0.6s ease-in;
 }
 
 @keyframes fadeIn {
@@ -367,36 +373,20 @@ main {
   to { opacity: 1; }
 }
 
-/* =========================
-   🧩 Layout Helpers
-   ========================= */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem; 
+/* Menu transition */
+#headerRight {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.centered {
-  text-align: center;
+#headerRight.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.hidden {
-  display: none !important;
+#headerRight.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.visible {
-  display: block !important;
-}
-
-/* =========================
-   🪷 Legacy Scroll Motif
-   ========================= */
-.scroll-motif {
-  font-size: 1.2rem;
-  color: #666;
-  text-align: center;
-  margin: 2rem 0;
-  animation: slow-spin 20s linear infinite;
-}
