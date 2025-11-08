@@ -401,14 +401,19 @@ body.fade-in {
   display: block;
 }
 
-/* Desktop: always show nav */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   #headerRight {
-    display: flex !important; /* or block, depending on layout */
+    display: none;
+    opacity: 0;
+    pointer-events: none;
   }
 
-  #menuToggle {
-    display: none; /* hide hamburger on desktop */
+  #headerRight.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    flex-direction: column;
   }
 }
+
 
