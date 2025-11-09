@@ -217,18 +217,23 @@ main {
   width: 60%;
   position: relative;
 }
+
 .scroll-divider::after {
-  content: "✦";
+  content: "✦"; /* You can swap this with attr(data-symbol) for dynamic symbols */
   position: absolute;
-  top: -0.8rem;
+  top: -0.7rem; /* Slightly refined for vertical alignment */
   left: 50%;
   transform: translateX(-50%);
   background: var(--divider-bg);
   padding: 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.2vw, 1.4rem); /* Responsive scaling */
   color: #666;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15); /* Gentle glow */
   animation: slow-spin 20s linear infinite;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
 @keyframes slow-spin {
   from { transform: translateX(-50%) rotate(0deg); }
   to { transform: translateX(-50%) rotate(360deg); }
