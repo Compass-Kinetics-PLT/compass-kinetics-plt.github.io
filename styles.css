@@ -31,7 +31,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  font-size: 1.0rem;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
   line-height: 1.2;
   opacity: 0;
   transition: opacity 1.5s ease-in, background-color 0.5s, color 0.5s;
